@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Jogo</title>
+  <link rel="stylesheet" href="/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <h1 class="title" id="form-title">Adicionar Jogo</h1>
+    <form id="game-form">
+      <input type="hidden" id="game-id">
+      <div class="field">
+        <label class="label">Título</label>
+        <div class="control">
+          <input class="input" type="text" id="title" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Console</label>
+        <div class="control">
+          <input class="input" type="text" id="console" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Gênero</label>
+        <div class="control">
+          <input class="input" type="text" id="genre" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Data de Início</label>
+        <div class="control">
+          <input class="input" type="date" id="startDate" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Data de Conclusão</label>
+        <div class="control">
+          <input class="input" type="date" id="finishDate" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Tempo Jogando</label>
+        <div class="control">
+          <input class="input" type="text" id="timePlayed" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Nota</label>
+        <div class="control">
+          <input class="input" type="number" id="rating" min="0" max="10" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Condição</label>
+        <div class="control">
+          <input class="input" type="text" id="condition" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Missão</label>
+        <div class="control">
+          <textarea class="textarea" id="mission" required></textarea>
+        </div>
+      </div>
+      <div class="control mt-3">
+        <button class="button is-primary" type="submit">Salvar</button>
+      </div>
+    </form>
+  </div>
+</section>
+<script src="/js/gameForm.js"></script>
+</body>
+</html>

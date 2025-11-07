@@ -1,0 +1,145 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Catálogo de Jogos Zerados",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/games": {
+      "get": {
+        "tags": ["Games"],
+        "summary": "Listar todos os jogos zerados",
+        "parameters": [
+          {
+            "name": "console",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Filtrar por console"
+          },
+          {
+            "name": "genre",
+            "in": "query",
+            "schema": { "type": "string" },
+            "description": "Filtrar por gênero"
+          },
+          {
+            "name": "rating",
+            "in": "query",
+            "schema": { "type": "integer" },
+            "description": "Filtrar por nota mínima"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de jogos",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 1,
+                    "title": "The Legend of Zelda: Breath of the Wild",
+                    "console": "Switch",
+                    "genre": "Ação/Aventura",
+                    "startDate": "2023-01-05",
+                    "finishDate": "2023-01-25",
+                    "timePlayed": "50h",
+                    "rating": 10,
+                    "condition": "100%",
+                    "mission": "Completar todas as missões principais e secundárias"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Games"],
+        "summary": "Adicionar um novo jogo",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Game"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Jogo criado" },
+          "400": { "description": "Dados inválidos" },
+          "401": { "description": "Não autorizado" }
+        }
+      }
+    },
+    "/games/{id}": {
+      "get": {
+        "tags": ["Games"],
+        "summary": "Obter jogo por ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "responses": {
+          "200": { "description": "Jogo encontrado", "content": { "application/json": { "example": {} } } },
+          "404": { "description": "Jogo não encontrado" }
+        }
+      },
+      "put": {
+        "tags": ["Games"],
+        "summary": "Atualizar jogo",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": { "schema": { "$ref": "#/components/schemas/Game" } }
+          }
+        },
+        "responses": {
+          "200": { "description": "Jogo atualizado" },
+          "400": { "description": "Dados inválidos" },
+          "401": { "description": "Não autorizado" },
+          "404": { "description": "Jogo não encontrado" }
+        }
+      },
+      "delete": {
+        "tags": ["Games"],
+        "summary": "Remover jogo",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "responses": {
+          "200": { "description": "Jogo removido" },
+          "401": { "description": "Não autorizado" },
+          "404": { "description": "Jogo não encontrado" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Game": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "console": { "type": "string" },
+          "genre": { "type": "string" },
+          "startDate": { "type": "string", "format": "date" },
+          "finishDate": { "type": "string", "format": "date" },
+          "timePlayed": { "type": "string" },
+          "rating": { "type": "integer" },
+          "condition": { "type": "string" },
+          "mission": { "type": "string" }
+        },
+        "required": ["title", "console", "genre", "startDate", "finishDate", "timePlayed", "rating", "condition", "mission"]
+      }
+    }
+  }
+}

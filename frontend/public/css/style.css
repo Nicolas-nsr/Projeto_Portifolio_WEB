@@ -1,0 +1,21 @@
+/* Exemplo de cards mais bonitos */
+#gamesContainer .card {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.modal-card {
+  max-width: 600px;
+}
+
+#alert {
+  display: none;
+}
+
+.is-hidden {
+  display: none;
+}

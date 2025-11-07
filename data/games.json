@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "console": "Switch",
+    "genre": "Ação/Aventura",
+    "startDate": "2023-01-05",
+    "finishDate": "2023-01-25",
+    "timePlayed": "50h",
+    "rating": 10,
+    "condition": "100%",
+    "mission": "Completar todas as missões principais e secundárias"
+  },
+  {
+    "id": 2,
+    "title": "God of War",
+    "console": "PS4",
+    "genre": "Ação",
+    "startDate": "2023-02-01",
+    "finishDate": "2023-02-20",
+    "timePlayed": "40h",
+    "rating": 9,
+    "condition": "História",
+    "mission": "Completar a história principal"
+  }
+]

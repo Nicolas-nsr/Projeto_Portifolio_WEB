@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Jogos Zerados</title>
+  
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="/css/bulma.min.css" />
+  <!-- Seu CSS customizado -->
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Catálogo de Jogos Zerados</h1>
+      
+      <div id="alert" class="notification is-danger is-hidden"></div>
+      
+      <!-- Botão para abrir modal de cadastro -->
+      <div class="has-text-right mb-4">
+        <button id="btnAddGame" class="button is-primary">Adicionar Novo Jogo</button>
+      </div>
+      
+      <div id="gamesContainer" class="columns is-multiline">
+        <!-- Cards de jogos serão inseridos aqui -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal para formulário de adicionar/editar jogo -->
+  <div id="gameModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 600px;">
+      <header class="modal-card-head">
+        <p class="modal-card-title" id="modalTitle">Adicionar Novo Jogo</p>
+        <button class="delete" aria-label="close" id="closeModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="gameForm">
+          <!-- Inputs do formulário -->
+          <div class="field">
+            <label class="label">Título</label>
+            <div class="control">
+              <input class="input" type="text" id="title" name="title" required />
+            </div>
+          </div>
+          
+          <div class="field">
+            <label class="label">Console</label>
+            <div class="control">
+              <input class="input" type="text" id="console" name="console" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Gênero</label>
+            <div class="control">
+              <input class="input" type="text" id="genre" name="genre" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Data Início</label>
+            <div class="control">
+              <input class="input" type="date" id="startDate" name="startDate" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Data Término</label>
+            <div class="control">
+              <input class="input" type="date" id="finishDate" name="finishDate" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Tempo Jogando</label>
+            <div class="control">
+              <input class="input" type="text" id="timePlayed" name="timePlayed" placeholder="Ex: 50h" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Nota</label>
+            <div class="control">
+              <input class="input" type="number" id="rating" name="rating" min="0" max="10" step="0.1" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Condição</label>
+            <div class="control">
+              <input class="input" type="text" id="condition" name="condition" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Missão</label>
+            <div class="control">
+              <textarea class="textarea" id="mission" name="mission"></textarea>
+            </div>
+          </div>
+        </form>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" id="saveGameBtn">Salvar</button>
+        <button class="button" id="cancelBtn">Cancelar</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
