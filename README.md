@@ -37,7 +37,7 @@ Aplicação completa (API + Web) para gerenciar e visualizar um catálogo pessoa
 ## ⚙️ Instalação
 
 ### 1️⃣ Clonar o repositório
-```bash
+
 git clone https://github.com/seu-usuario/catalogo-jogos-zerados.git
 cd catalogo-jogos-zerados
 2️⃣ Instalar dependências
